@@ -16,4 +16,4 @@ Open print preview (<kbd>Ctrl</kbd> (or <kbd>⌘</kbd> on macOS) + <kbd>P</kbd>)
 
 ## Links
 
-- [Playground](//boring.wang/markdown/)
+- [Playground](http://boring.wang/markdown/)
