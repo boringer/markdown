@@ -42,7 +42,7 @@ import './index.css';
     }
 
     function handleToggle() {
-        document.body.classList.toggle('previewing');
+        document.body.classList.toggle('editing');
     }
 
     function handleScroll(e) {

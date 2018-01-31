@@ -221,7 +221,7 @@ body {
 
 
 @media screen and (max-width: 576px) {
-    .previewer {
+    .editor {
         display: none;
     }
 
@@ -230,23 +230,28 @@ body {
         right: 0;
         top: 0;
         display: block;
-        width: 2em;
-        height: 2em;
+        line-height: 1;
+        color: black;
         padding: 0.5em;
         background: none;
         opacity: var(--golden-ratio);
+
+        &::before {
+            content: '\270E';
+        }
     }
 
-    .previewing {
+    .editing {
         & .editor {
-            display: none;
-        }
-
-        & .previewer {
             display: block;
         }
 
+        & .previewer {
+            display: none;
+        }
+
         & .toggler {
+            color: white;
             opacity: 1;
         }
     }
