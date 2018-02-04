@@ -1,0 +1,271 @@
+:root {
+    --border: 1px solid gainsboro;
+    --background-color: whitesmoke;
+    --text-secondary-color: gray;
+    --golden-ratio: 0.618;
+    --bold: {
+        font-weight: 600;
+    };
+    --scrollable: {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    };
+    --mono: {
+        font-family: "operator mono", consolas, menlo, monospace;
+    };
+    --background: {
+        background: var(--background-color);
+    };
+    --code: {
+        @apply --mono;
+        @apply --background;
+        font-size: 0.9em;
+        padding: 0.2em 0.4em;
+        border-radius: 0.2em;
+    };
+    --bordered {
+        border: var(--border);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:focus {
+    outline: none;
+}
+
+button {
+    font: inherit;
+    border: none;
+}
+
+textarea {
+    border-radius: 0;
+}
+
+table {
+    max-width: 100%;
+}
+
+html,
+body {
+    height: 100%;
+}
+body {
+    display: flex;
+    font: 16px/1.5 system-ui;
+    word-break: break-word;
+}
+
+.window {
+    @apply --scrollable;
+    flex: 1;
+    padding: 1em;
+}
+
+.editor {
+    font: inherit;
+    @apply --mono;
+    white-space: pre;
+    color: white;
+    border: none;
+    background: #263238;
+    tab-size: 4;
+}
+
+.previewer {
+    & > *,
+    & blockquote > *,
+    & li > * {
+        margin: 1em 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    & li {
+        & ol,
+        & ul {
+            margin-top: 0;
+        }
+    }
+
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+        @apply --bold;
+        font-size: 1em;
+        margin: 1.5em 0 0.75em;
+
+        &:first-child,
+        & + h1,
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-top: 0;
+        }
+    }
+    & h1,
+    & h2 {
+        border-bottom: var(--border);
+        padding-bottom: 0.1em;
+    }
+    & h1 {
+        font-size: 2em;
+    }
+    & h2 {
+        font-size: 1.5em;
+    }
+    & h3 {
+        font-size: 1.2em;
+    }
+
+    & > ol,
+    & > ul {
+        margin-left: 2em;
+
+        & ol,
+        & ul {
+            margin-left: 2em;
+        }
+    }
+
+    & a {
+        color: royalblue;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    & strong {
+        @apply --bold;
+    }
+
+    & pre,
+    & code {
+        @apply --code;
+    }
+    & pre {
+        @apply --scrollable;
+        padding: 0.5em 1em;
+
+        & code {
+            font-size: 1em;
+            padding: 0;
+            background: none;
+            border-radius: 0;
+        }
+    }
+
+    & kbd {
+        @apply --code;
+        color: white;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
+        background: var(--text-secondary-color);
+        border-radius: 0.4em;
+    }
+
+    & table {
+        @apply --bordered;
+        border-collapse: collapse;
+    }
+    & tbody tr:hover {
+        @apply --background;
+    }
+    & th,
+    & td {
+        @apply --bordered;
+        padding: 0.5em 1em;
+    }
+    & th {
+        @apply --bold;
+    }
+
+    & blockquote {
+        color: var(--text-secondary-color);
+        border-left: var(--border);
+        border-left-width: 0.25em;
+        padding: 0 1em;
+
+        & > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    & .lang-sh,
+    & code:not([class]) {
+        & * {
+            font-weight: inherit;
+            font-style: inherit;
+            color: inherit;
+        }
+    }
+}
+
+.toggler {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 576px) {
+    .editor {
+        display: none;
+    }
+
+    .toggler {
+        position: fixed;
+        right: 0;
+        top: 0;
+        display: block;
+        line-height: 1;
+        color: black;
+        padding: 0.5em;
+        background: none;
+        opacity: var(--golden-ratio);
+
+        &::before {
+            content: '\270E';
+        }
+    }
+
+    .editing {
+        & .editor {
+            display: block;
+        }
+
+        & .previewer {
+            display: none;
+        }
+
+        & .toggler {
+            color: white;
+            opacity: 1;
+        }
+    }
+}
+
+
+
+@media print {
+    html,
+    body {
+        height: auto;
+    }
+
+    .editor {
+        display: none;
+    }
+}
