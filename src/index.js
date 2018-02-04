@@ -38,7 +38,10 @@ import './index.css';
     }
 
     function handleInput(e) {
-        preview(e.target.value);
+        clearTimeout(inputTimer);
+        inputTimer = setTimeout(() => {
+            preview(e.target.value);
+        }, 500);
     }
 
     function handleToggle() {
@@ -80,5 +83,6 @@ import './index.css';
     const previewer = document.getElementById('previewer');
     const toggler = document.getElementById('toggler');
     let scrollingElement = null;
+    let inputTimer = null;
     init();
 })();
