@@ -3,6 +3,7 @@
     --background-color: whitesmoke;
     --text-secondary-color: gray;
     --golden-ratio: 0.618;
+
     --bold: {
         font-weight: 600;
     };
@@ -26,6 +27,8 @@
     --bordered {
         border: var(--border);
     }
+
+    @custom-selector :--heading h1, h2, h3, h4, h5, h6
 }
 
 * {
@@ -94,23 +97,13 @@ body {
         }
     }
 
-    & h1,
-    & h2,
-    & h3,
-    & h4,
-    & h5,
-    & h6 {
+    & :--heading {
         @apply --bold;
         font-size: 1em;
         margin: 1.5em 0 0.75em;
 
         &:first-child,
-        & + h1,
-        & + h2,
-        & + h3,
-        & + h4,
-        & + h5,
-        & + h6 {
+        & + :--heading {
             margin-top: 0;
         }
     }
@@ -267,5 +260,21 @@ body {
 
     .editor {
         display: none;
+    }
+
+    .previewer {
+        & a {
+            color: inherit;
+        }
+        & :--heading {
+            & a::after {
+                content: attr(href);
+                vertical-align: 0.1em;
+                font-weight: normal;
+                font-size: 0.75em;
+                color: var(--text-secondary-color);
+                margin-left: 1em;
+            }
+        }
     }
 }
