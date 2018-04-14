@@ -1,8 +1,16 @@
-## v0.2.1 (2018-02-04)
+## 0.2.2 (2018-04-14)
 
--   Added throttle to input event.
+-	Updated print style:
 
-## v0.2.0 (2018-01-31)
+	-	Reset color of links.
 
--   Fixed icon unicode error.
--   Defaulted to preview mode on small screens.
+	-	If one heading is a link, show the URL beside it.
+
+## 0.2.1 (2018-02-04)
+
+-	Added throttle to input event.
+
+## 0.2.0 (2018-01-31)
+
+-	Fixed icon unicode error.
+-	Defaulted to preview mode on small screens.
