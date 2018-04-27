@@ -263,9 +263,6 @@ body {
     }
 
     .previewer {
-        & a {
-            color: inherit;
-        }
         & :--heading {
             & a::after {
                 content: attr(href);
