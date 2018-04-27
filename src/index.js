@@ -1,6 +1,6 @@
-import marked from 'marked';
+import MarkdownIt from 'markdown-it';
 import highlight from 'highlight.js';
-import 'highlight.js/styles/github.css';
+import 'highlight.js/styles/atom-one-light.css';
 import './index.css';
 
 (() => {
@@ -68,9 +68,10 @@ import './index.css';
     }
 
     function preview(code) {
-        previewer.innerHTML = marked(code, {
-            highlight: (code) => highlight.highlightAuto(code).value
+        const md = new MarkdownIt({
+            highlight: (code, lang) => highlight.highlight(lang, code).value
         });
+        previewer.innerHTML = md.render(code);
     }
 
     function highlightDefault() {
