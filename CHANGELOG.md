@@ -1,3 +1,7 @@
+## 0.2.4 (2018-04-27)
+
+-	Don't reset color of links on print.
+
 ## 0.2.3 (2018-04-27)
 
 -	Break lines in code blocks on print.
