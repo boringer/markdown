@@ -1,3 +1,7 @@
+## 0.2.3 (2018-04-27)
+
+-	Break lines in code blocks on print.
+
 ## 0.2.2 (2018-04-14)
 
 -	Updated print style:
