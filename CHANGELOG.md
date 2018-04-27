@@ -1,3 +1,9 @@
+## 0.3.0 (2018-04-27)
+
+-	Changed Markdown parser.
+
+-	Updated code highlight style.
+
 ## 0.2.4 (2018-04-27)
 
 -	Don't reset color of links on print.
