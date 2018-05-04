@@ -1,3 +1,7 @@
+## 0.3.1 (2018-05-04)
+
+-	Removed URLs beside links on print.
+
 ## 0.3.0 (2018-04-27)
 
 -	Changed Markdown parser.
