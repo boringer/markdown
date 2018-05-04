@@ -263,16 +263,6 @@ body {
     }
 
     .previewer {
-        & :--heading {
-            & a::after {
-                content: attr(href);
-                vertical-align: 0.1em;
-                font-weight: normal;
-                font-size: 0.75em;
-                color: var(--text-secondary-color);
-                margin-left: 1em;
-            }
-        }
         & pre {
             white-space: pre-wrap;
         }
