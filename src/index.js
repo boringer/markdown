@@ -69,6 +69,7 @@ import './index.css';
 
     function preview(code) {
         const md = new MarkdownIt({
+            html: true,
             highlight: (code, lang) => highlight.highlight(lang, code).value
         });
         previewer.innerHTML = md.render(code);
