@@ -1,3 +1,7 @@
+## 0.3.2 (2018-05-12)
+
+-	Enabled HTML parsing.
+
 ## 0.3.1 (2018-05-04)
 
 -	Removed URLs beside links on print.
