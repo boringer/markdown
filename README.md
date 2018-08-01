@@ -20,4 +20,4 @@ See [`CHANGELOG.md`](./CHANGELOG.md).
 
 ## Links
 
--   [Playground](http://boring.wang/markdown/)
+-   [Playground](https://boring.wang/markdown/)
