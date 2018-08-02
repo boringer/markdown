@@ -4,13 +4,13 @@ A boring Markdown previewer.
 
 ## Features
 
--   Responsive view.
--   Synchronous scrolling.
--   PDF exporting.
+- Responsive view
+- Synchronous scrolling
+- PDF exporting
 
 ## Usage
 
-### PDF Exporting
+### PDF exporting
 
 Open print preview (<kbd>Ctrl</kbd> (or <kbd>⌘</kbd> on macOS) + <kbd>P</kbd>) and save as PDF.
 
@@ -20,4 +20,4 @@ See [`CHANGELOG.md`](./CHANGELOG.md).
 
 ## Links
 
--   [Playground](https://boring.wang/markdown/)
+- [Playground](https://boring.wang/markdown/)
