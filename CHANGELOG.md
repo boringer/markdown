@@ -1,6 +1,7 @@
-## 0.3.3 (2018-08-02)
+## 0.3.4 (2018-08-02)
 
-- Update style of monospace.
+- Disabled user scalable.
+- Updated style of monospace.
 
 ## 0.3.2 (2018-05-12)
 
