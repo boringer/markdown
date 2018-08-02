@@ -12,7 +12,7 @@
         -webkit-overflow-scrolling: touch;
     };
     --mono: {
-        font-family: "operator mono", consolas, menlo, monospace;
+        font-family: hack, menlo, consolas, monospace;
     };
     --background: {
         background: var(--background-color);
@@ -20,7 +20,7 @@
     --code: {
         @apply --mono;
         @apply --background;
-        font-size: 0.9em;
+        font-size: 0.8em;
         padding: 0.2em 0.4em;
         border-radius: 0.2em;
     };
@@ -73,6 +73,7 @@ body {
 .editor {
     font: inherit;
     @apply --mono;
+    font-size: 15px;
     white-space: pre;
     color: white;
     border: none;
