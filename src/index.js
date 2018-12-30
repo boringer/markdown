@@ -38,6 +38,7 @@ function handleKeydown(e) {
 
 function handleInput(e) {
     clearTimeout(inputTimer);
+
     inputTimer = setTimeout(() => {
         preview(e.target.value);
     }, 500);
@@ -48,10 +49,7 @@ function handleToggle() {
 }
 
 function handleScroll(e) {
-    const elements = [
-        editor,
-        previewer,
-    ];
+    const elements = [editor, previewer];
     const target = e.target;
 
     if (scrollingElement && target !== scrollingElement) {
@@ -60,12 +58,22 @@ function handleScroll(e) {
     }
 
     elements.splice(elements.indexOf(target), 1);
+
     elements.forEach((element) => {
-        element.scrollTo(0, target.scrollTop / (target.scrollHeight - target.offsetHeight) * (element.scrollHeight - element.offsetHeight));
+        element.scrollTo(
+            0,
+            (target.scrollTop / (target.scrollHeight - target.offsetHeight)) *
+                (element.scrollHeight - element.offsetHeight)
+        );
     });
+
     scrollingElement = target;
 }
 
+/**
+ * Output the transformed code as HTML.
+ * @param {string} code
+ */
 function preview(code) {
     const md = new MarkdownIt({
         html: true,
@@ -83,7 +91,15 @@ function highlightDefault() {
 const editor = document.getElementById('editor');
 const previewer = document.getElementById('previewer');
 const toggler = document.getElementById('toggler');
+
+/**
+ * @type {HTMLElement}
+ */
 let scrollingElement = null;
+
+/**
+ * @type {NodeJS.Timeout}
+ */
 let inputTimer = null;
 
 init();
