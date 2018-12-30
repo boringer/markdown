@@ -1,34 +1,12 @@
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
 :root {
     --border: 1px solid gainsboro;
     --background-color: whitesmoke;
     --text-secondary-color: gray;
     --golden-ratio: 0.618;
-
-    --bold: {
-        font-weight: 600;
-    };
-    --scrollable: {
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-    };
-    --mono: {
-        font-family: hack, menlo, consolas, monospace;
-    };
-    --background: {
-        background: var(--background-color);
-    };
-    --code: {
-        @apply --mono;
-        @apply --background;
-        font-size: 0.8em;
-        padding: 0.2em 0.4em;
-        border-radius: 0.2em;
-    };
-    --bordered: {
-        border: var(--border);
-    };
-
-    @custom-selector :--heading h1, h2, h3, h4, h5, h6
+    --bold: 600;
+    --mono: hack, menlo, consolas, monospace;
 }
 
 * {
@@ -65,14 +43,15 @@ body {
 }
 
 .window {
-    @apply --scrollable;
     flex: 1;
     padding: 1em;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .editor {
     font: inherit;
-    @apply --mono;
+    font-family: var(--mono);
     font-size: 15px;
     white-space: pre;
     color: white;
@@ -99,7 +78,7 @@ body {
     }
 
     & :--heading {
-        @apply --bold;
+        font-weight: var(--bold);
         font-size: 1em;
         margin: 1.5em 0 0.75em;
 
@@ -143,16 +122,22 @@ body {
     }
 
     & strong {
-        @apply --bold;
+        font-weight: var(--bold);
     }
 
     & pre,
-    & code {
-        @apply --code;
+    & code,
+    & kbd {
+        font-family: var(--mono);
+        font-size: 0.8em;
+        padding: 0.2em 0.4em;
+        background: var(--background-color);
+        border-radius: 0.2em;
     }
     & pre {
-        @apply --scrollable;
         padding: 0.5em 1em;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
 
         & code {
             font-size: 1em;
@@ -163,7 +148,6 @@ body {
     }
 
     & kbd {
-        @apply --code;
         color: white;
         padding-top: 0.1em;
         padding-bottom: 0.1em;
@@ -172,19 +156,19 @@ body {
     }
 
     & table {
-        @apply --bordered;
+        border: var(--border);
         border-collapse: collapse;
     }
     & tbody tr:hover {
-        @apply --background;
+        background: var(--background-color);
     }
     & th,
     & td {
-        @apply --bordered;
         padding: 0.5em 1em;
+        border: var(--border);
     }
     & th {
-        @apply --bold;
+        font-weight: var(--bold);
     }
 
     & blockquote {
