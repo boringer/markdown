@@ -21,13 +21,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/boringwong/markdown.git"
+    "url": "git+https://github.com/gnirob/markdown.git"
   },
   "author": "Boring <boring@boring.wang> (https://boring.wang/)",
   "license": "UNLICENSED",
   "private": true,
   "bugs": {
-    "url": "https://github.com/boringwong/markdown/issues"
+    "url": "https://github.com/gnirob/markdown/issues"
   },
-  "homepage": "https://github.com/boringwong/markdown#readme"
+  "homepage": "https://github.com/gnirob/markdown#readme"
 }
