@@ -88,7 +88,7 @@ function highlightDefault() {
     }
 }
 
-const editor = document.getElementById('editor');
+const editor = /** @type {HTMLTextAreaElement} */ (document.getElementById('editor'));
 const previewer = document.getElementById('previewer');
 const toggler = document.getElementById('toggler');
 
