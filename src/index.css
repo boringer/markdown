@@ -40,6 +40,7 @@ body {
     display: flex;
     font: 16px/1.5 system-ui;
     word-break: break-word;
+    tab-size: 4;
 }
 
 .window {
@@ -57,7 +58,6 @@ body {
     color: white;
     border: none;
     background: #263238;
-    tab-size: 4;
 }
 
 .previewer {
