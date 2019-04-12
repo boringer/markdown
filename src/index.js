@@ -77,7 +77,14 @@ function handleScroll(e) {
 function preview(code) {
     const md = new MarkdownIt({
         html: true,
-        highlight: (code, lang) => highlight.highlight(lang, code).value
+
+        highlight: (code, lang) => {
+            if (!lang) {
+                return;
+            }
+
+            return highlight.highlight(lang, code).value;
+        }
     });
     previewer.innerHTML = md.render(code);
 }
