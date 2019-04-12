@@ -1,5 +1,9 @@
 # Change log
 
+## 0.3.6 (2019-04-12)
+
+-   Updated `tab-size` globally.
+
 ## 0.3.5 (2019-04-01)
 
 -   Updated style of typography.
