@@ -1,5 +1,9 @@
 # Change log
 
+## 0.3.7 (2019-04-12)
+
+-   Fixed error with code blocks without a language.
+
 ## 0.3.6 (2019-04-12)
 
 -   Updated `tab-size` globally.
