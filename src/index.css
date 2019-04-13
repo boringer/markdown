@@ -135,12 +135,12 @@ body {
         border-radius: 0.2em;
     }
     & pre {
-        padding: 0.5em 1em;
+        padding: 1em;
         overflow: auto;
         -webkit-overflow-scrolling: touch;
 
         & code {
-            font-size: 1em;
+            font-size: 1.1em;
             padding: 0;
             background: none;
             border-radius: 0;
@@ -181,7 +181,7 @@ body {
         }
     }
 
-    & .lang-sh,
+    & .language-sh,
     & code:not([class]) {
         & * {
             font-weight: inherit;
