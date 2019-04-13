@@ -1,5 +1,9 @@
 # Change log
 
+## 0.3.8 (2019-04-13)
+
+-   Updated style of code.
+
 ## 0.3.7 (2019-04-12)
 
 -   Fixed error with code blocks without a language.
