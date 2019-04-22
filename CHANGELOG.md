@@ -1,5 +1,9 @@
 # Change log
 
+## 0.4.0 (2019-04-22)
+
+-   Updated theme color to `rebeccapurple`.
+
 ## 0.3.8 (2019-04-13)
 
 -   Updated style of code.
