@@ -113,7 +113,7 @@ body {
     }
 
     & a {
-        color: royalblue;
+        color: rebeccapurple;
         text-decoration: none;
 
         &:hover {
