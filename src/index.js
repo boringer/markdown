@@ -1,4 +1,3 @@
-import MarkdownIt from 'markdown-it';
 import highlight from 'highlight.js';
 import 'highlight.js/styles/atom-one-light.css';
 import './index.css';
@@ -75,18 +74,21 @@ function handleScroll(e) {
  * @param {string} code
  */
 function preview(code) {
-    const md = new MarkdownIt({
-        html: true,
+    import('markdown-it').then((MarkdownIt) => {
+        // @ts-ignore
+        const md = new MarkdownIt({
+            html: true,
 
-        highlight: (code, lang) => {
-            if (!lang) {
-                return;
+            highlight: (code, lang) => {
+                if (!lang) {
+                    return;
+                }
+
+                return highlight.highlight(lang, code).value;
             }
-
-            return highlight.highlight(lang, code).value;
-        }
-    });
-    previewer.innerHTML = md.render(code);
+        });
+        previewer.innerHTML = md.render(code);
+    })
 }
 
 function highlightDefault() {
