@@ -1,72 +1,72 @@
-import highlight from 'highlight.js';
-import 'highlight.js/styles/atom-one-light.css';
-import './index.css';
+import highlight from 'highlight.js'
+import 'highlight.js/styles/atom-one-light.css'
+import './index.css'
 
 function init() {
-    listenKeydown();
-    listenInput();
-    listenToggle();
-    listenScroll();
-    highlight.registerLanguage('vue', () => highlight.getLanguage('html'));
-    highlightDefault();
+    listenKeydown()
+    listenInput()
+    listenToggle()
+    listenScroll()
+    highlight.registerLanguage('vue', () => highlight.getLanguage('html'))
+    highlightDefault()
 }
 
 function listenKeydown() {
-    editor.addEventListener('keydown', handleKeydown);
+    editor.addEventListener('keydown', handleKeydown)
 }
 
 function listenInput() {
-    editor.addEventListener('input', handleInput);
+    editor.addEventListener('input', handleInput)
 }
 
 function listenToggle() {
-    toggler.addEventListener('click', handleToggle);
+    toggler.addEventListener('click', handleToggle)
 }
 
 function listenScroll() {
-    editor.addEventListener('scroll', handleScroll);
-    previewer.addEventListener('scroll', handleScroll);
+    editor.addEventListener('scroll', handleScroll)
+    previewer.addEventListener('scroll', handleScroll)
 }
 
 function handleKeydown(e) {
     if (e.keyCode === 9) {
-        e.preventDefault();
-        document.execCommand('insertText', true, '\t');
+        e.preventDefault()
+        document.execCommand('insertText', true, '\t')
     }
 }
 
 function handleInput(e) {
-    clearTimeout(inputTimer);
+    clearTimeout(inputTimer)
 
     inputTimer = setTimeout(() => {
-        preview(e.target.value);
-    }, 500);
+        preview(e.target.value)
+    }, 500)
 }
 
 function handleToggle() {
-    document.body.classList.toggle('editing');
+    document.body.classList.toggle('editing')
 }
 
 function handleScroll(e) {
-    const elements = [editor, previewer];
-    const target = e.target;
+    const elements = [editor, previewer]
+    const target = e.target
 
     if (scrollingElement && target !== scrollingElement) {
-        scrollingElement = null;
-        return;
+        scrollingElement = null
+        return
     }
 
-    elements.splice(elements.indexOf(target), 1);
+    elements.splice(elements.indexOf(target), 1)
 
     elements.forEach((element) => {
         element.scrollTo(
             0,
             (target.scrollTop / (target.scrollHeight - target.offsetHeight)) *
                 (element.scrollHeight - element.offsetHeight)
-        );
-    });
+        )
+    })
 
-    scrollingElement = target;
+    scrollingElement = target
 }
 
 /**
@@ -81,34 +81,36 @@ function preview(code) {
 
             highlight: (code, lang) => {
                 if (!lang) {
-                    return;
+                    return
                 }
 
-                return highlight.highlight(lang, code).value;
+                return highlight.highlight(lang, code).value
             }
-        });
-        previewer.innerHTML = md.render(code);
+        })
+        previewer.innerHTML = md.render(code)
     })
 }
 
 function highlightDefault() {
     if (editor.value) {
-        preview(editor.value);
+        preview(editor.value)
     }
 }
 
-const editor = /** @type {HTMLTextAreaElement} */ (document.getElementById('editor'));
-const previewer = document.getElementById('previewer');
-const toggler = document.getElementById('toggler');
+const editor = /** @type {HTMLTextAreaElement} */ (document.getElementById(
+    'editor'
+))
+const previewer = document.getElementById('previewer')
+const toggler = document.getElementById('toggler')
 
 /**
  * @type {HTMLElement}
  */
-let scrollingElement = null;
+let scrollingElement = null
 
 /**
  * @type {NodeJS.Timeout}
  */
-let inputTimer = null;
+let inputTimer = null
 
-init();
+init()
