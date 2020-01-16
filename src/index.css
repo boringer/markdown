@@ -55,9 +55,9 @@ body {
     font-family: var(--mono);
     font-size: 14px;
     white-space: pre;
-    color: white;
+    color: whitesmoke;
     border: none;
-    background: #263238;
+    background: #0f111a;
 }
 
 .previewer {
@@ -195,8 +195,6 @@ body {
     display: none;
 }
 
-
-
 @media screen and (max-width: 576px) {
     .editor {
         display: none;
@@ -233,8 +231,6 @@ body {
         }
     }
 }
-
-
 
 @media print {
     html,
