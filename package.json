@@ -2,7 +2,7 @@
   "name": "markdown",
   "version": "0.4.0",
   "dependencies": {
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^10.4.1",
     "markdown-it": "^8.4.2"
   },
   "devDependencies": {
