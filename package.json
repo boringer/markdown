@@ -16,17 +16,17 @@
     "start": "parcel ./src/index.html -d ./temp --open",
     "build": "rm -rf ./dist/ && parcel build --public-url ./ ./src/index.html --no-source-maps",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d ./dist/ -m 'Deploy'"
+    "deploy": "gh-pages -b gh-pages -d ./dist/ -m 'Deploy'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gnirob/markdown.git"
+    "url": "git+https://github.com/bflatmajor/markdown.git"
   },
   "author": "Boring <boring@boring.wang> (https://boring.wang/)",
   "license": "UNLICENSED",
   "private": true,
   "bugs": {
-    "url": "https://github.com/gnirob/markdown/issues"
+    "url": "https://github.com/bflatmajor/markdown/issues"
   },
-  "homepage": "https://github.com/gnirob/markdown#readme"
+  "homepage": "https://github.com/bflatmajor/markdown#readme"
 }
